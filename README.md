@@ -1,8 +1,8 @@
-# n8n Node Component System
+# ⚡ n8n Node Component System
 
 A React-based workflow node component system built with TypeScript, featuring comprehensive accessibility support and clean architecture patterns.
 
-## Project Structure
+## 📁 Project Structure
 
 ```
 src/
@@ -28,7 +28,7 @@ src/
 └── main.tsx            # Entry point
 ```
 
-## Architecture
+## 🏗️ Architecture
 
 ### Component Hierarchy
 
@@ -91,7 +91,7 @@ CanvasNode (Container)
 - **Design Tokens**: Centralized in `/theme/tokens/`
 - **CSS Custom Properties**: Used for theming and consistency
 
-## Accessibility Implementation
+## ♿ Accessibility Implementation
 
 This project implements comprehensive accessibility features to ensure the node components are usable by all users, including those using assistive technologies and keyboard navigation.
 
@@ -148,7 +148,7 @@ This implementation follows:
 - WAI-ARIA 1.2 best practices for button widgets
 - WCAG 2.1 Success Criterion 2.3.3 (Animation from Interactions)
 
-## Development
+## 🚀 Development
 
 ### Prerequisites
 - Node.js 18+ 
@@ -182,7 +182,7 @@ This project maintains high code quality through:
 - **Consistent Naming**: kebab-case for files, PascalCase for components
 - **Code Organization**: Clear separation of concerns and folder structure
 
-## Technology Stack
+## 🛠️ Technology Stack
 
 - **React 19**: Latest React with new features
 - **TypeScript 5**: Strict mode enabled
