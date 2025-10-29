@@ -65,6 +65,11 @@ button {
 
   &:hover,
   &:focus-visible {
+    outline: none;
+    .node {
+      box-shadow: var(--shadow-lg);
+    }
+
     .handleConnector {
       opacity: 1;
     }
