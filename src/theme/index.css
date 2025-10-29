@@ -110,6 +110,10 @@ body {
     cursor: pointer;
     transform: scale(var(--node-scaling-hover));
     box-shadow: var(--shadow-lg), var(--node-bg-inset-1), var(--node-bg-inset-2);
+
+    .handleConnector {
+      opacity: 1;
+    }
   }
 
   /* Focus state matches hover for keyboard navigation */
@@ -175,6 +179,33 @@ body {
   }
 }
 
+/* Handle Connector: a circular Icon Button to add a connector from one node to another */
+.handleConnector {
+  --handleConnector-size: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--handleConnector-size);
+  height: var(--handleConnector-size);
+  border-radius: var(--radius-full);
+  background-color: var(--color-grey);
+  transition: background-color 200ms ease-in-out, opacity 500ms ease-in-out;
+  z-index: 10;
+  position: absolute;
+  right: calc(var(--handleConnector-size) / -2);
+  top: calc(50% - var(--handleConnector-size) / 2);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color-white);
+  }
+
+  &__icon {
+    color: var(--color-black);
+  }
+}
 /* Respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   .node {

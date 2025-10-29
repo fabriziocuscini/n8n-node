@@ -4,8 +4,8 @@ function App() {
   return (
     <div className="nodeStack">
       <CanvasNode
-        name="Get many messages"
-        subtitle="getAll: message"
+        name="Automate your workflow"
+        subtitle="automate: workflow"
         status="active"
         serviceName="n8n"
       />
@@ -17,22 +17,22 @@ function App() {
         serviceName="Gmail"
       />
       <CanvasNode
-        name="Get many messages"
-        subtitle="getAll: message"
+        name="Send text message"
+        subtitle="sendMessage: message"
         status="success"
         serviceIcon={<TelegramIcon />}
         serviceName="Telegram"
       />
       <CanvasNode
-        name="Get many messages"
-        subtitle="getAll: message"
+        name="Create a card"
+        subtitle="create: card"
         status="issues"
         serviceIcon={<TrelloIcon />}
         serviceName="Trello"
       />
       <CanvasNode
-        name="Get many messages"
-        subtitle="getAll: message"
+        name="Crawl a website"
+        subtitle="crawl: website"
         status="deactivated"
         serviceIcon={<FirecrawlIcon />}
         serviceName="Firecrawl"
