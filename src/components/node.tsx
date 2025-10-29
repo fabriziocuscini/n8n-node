@@ -1,6 +1,6 @@
 import type { NodeStatus } from '../types/node-status';
 import { PushPinIcon, CheckIcon, WarningIcon, PauseCircleIcon } from '@phosphor-icons/react';
-import { HandleConnector } from './';
+import { HandleConnector, Toolbar } from './';
 
 export interface NodeProps {
   status?: NodeStatus;
@@ -37,6 +37,7 @@ export const Node = ({
         {status === 'deactivated' && <PauseCircleIcon size={16} weight="bold" />}
       </div>
       <HandleConnector />
+      <Toolbar />
     </div>
   );
 };

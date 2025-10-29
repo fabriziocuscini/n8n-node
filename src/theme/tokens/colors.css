@@ -44,6 +44,7 @@
 
   /* Primitive colors */
   --color-grey: rgb(122 122 133);
+  --color-gray-dark: rgb(25 25 25);
   --color-orange: rgb(255 133 52);
   --color-red: rgb(255 64 52);
   --color-green: rgb(0 231 90);
