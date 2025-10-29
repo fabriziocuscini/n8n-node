@@ -7,7 +7,7 @@ export const HandleConnector = () => {
   };
 
   return (
-    <button className="handleConnector" role="button" onClick={handleClick}>
+    <button className="handleConnector" role="button" onClick={handleClick} tabIndex={-1}>
       <PlusIcon size={12} weight="bold" className="handleConnector__icon" />
     </button>
   );

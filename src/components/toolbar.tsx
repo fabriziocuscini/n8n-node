@@ -8,16 +8,16 @@ export const Toolbar = () => {
 
   return (
     <div className="toolbar" onClick={handleClick}>
-      <button className="toolbar__button">
+      <button className="toolbar__button" tabIndex={-1}>
         <PlayIcon />
       </button>
-      <button className="toolbar__button">
+      <button className="toolbar__button" tabIndex={-1}>
         <DeactivateIcon />
       </button>
-      <button className="toolbar__button">
+      <button className="toolbar__button" tabIndex={-1}>
         <DeleteIcon />
       </button>
-      <button className="toolbar__button">
+      <button className="toolbar__button" tabIndex={-1}>
         <MoreIcon />
       </button>
     </div>
