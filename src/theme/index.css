@@ -3,6 +3,16 @@
 :root {
   color-scheme: dark;
   --opacity-disabled: 0.2;
+
+  /* Node-specific tokens */
+  --node-size: 100px;
+  --node-scaling-hover: 1;
+  --node-selected-glow: var(--glow-lg);
+  --node-radius: var(--radius-lg);
+  --node-bg-gradient: linear-gradient(135deg, rgb(255 255 255 / 0.02) 0%, rgb(255 255 255 / 0) 100%),
+    linear-gradient(135deg, rgb(31 28 31) 0%, rgb(20 20 20) 100%);
+  --node-bg-inset-1: inset 1px 1px 4px 0 var(--color-white-alpha-20);
+  --node-bg-inset-2: inset -1px -1px 2px 0 var(--color-black-alpha-50);
 }
 
 html,
@@ -47,19 +57,23 @@ button {
 }
 
 .canvasNode {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--spacing-2);
 
   &__description {
+    position: absolute;
+    bottom: calc(var(--spacing-2) * -1);
+    transform: translateY(100%);
+    min-width: calc(var(--node-size) * 2);
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-1);
+    pointer-events: none;
+    user-select: none;
   }
 
   &__name {
+    margin-bottom: var(--spacing-1);
     font-size: 0.75rem;
     line-height: 1rem;
     font-weight: 700;
@@ -76,16 +90,6 @@ button {
 }
 
 .node {
-  /* Node-specific tokens */
-  --node-size: 100px;
-  --node-scaling-hover: 1;
-  --node-selected-glow: var(--glow-lg);
-  --node-radius: var(--radius-lg);
-  --node-bg-gradient: linear-gradient(135deg, rgb(255 255 255 / 0.02) 0%, rgb(255 255 255 / 0) 100%),
-    linear-gradient(135deg, rgb(31 28 31) 0%, rgb(20 20 20) 100%);
-  --node-bg-inset-1: inset 1px 1px 4px 0 var(--color-white-alpha-20);
-  --node-bg-inset-2: inset -1px -1px 2px 0 var(--color-black-alpha-50);
-
   position: relative;
   display: flex;
   justify-content: center;
