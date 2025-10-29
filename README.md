@@ -1,6 +1,95 @@
-# React + TypeScript + Vite
+# n8n Node Component System
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React-based workflow node component system built with TypeScript, featuring comprehensive accessibility support and clean architecture patterns.
+
+## Project Structure
+
+```
+src/
+├── components/          # React components
+│   ├── service-icons/  # Third-party service icons (Gmail, Telegram, etc.)
+│   ├── toolbar-icons/  # UI action icons (Play, Delete, etc.)
+│   ├── canvas-node.tsx # Stateful container component
+│   ├── node.tsx        # Presentational node component
+│   ├── toolbar.tsx     # Action toolbar component
+│   ├── handle-connector.tsx # Node connection point
+│   └── index.ts        # Barrel exports
+├── theme/              # CSS and design tokens
+│   ├── tokens/         # CSS custom properties
+│   │   ├── colors.css
+│   │   ├── spacing.css
+│   │   ├── shadows.css
+│   │   └── ...
+│   └── index.css       # Main styles
+├── types/              # Shared TypeScript types
+├── data/               # Mock data
+├── constants/          # Application constants
+├── App.tsx             # Main application
+└── main.tsx            # Entry point
+```
+
+## Architecture
+
+### Component Hierarchy
+
+The node system follows a clear component hierarchy with separation of concerns:
+
+```
+CanvasNode (Container)
+├── Node (Presentational)
+│   ├── Service Icon
+│   └── Status Icon (conditional)
+├── Description
+│   ├── Name
+│   └── Subtitle
+├── Toolbar
+│   └── Action Buttons (4)
+└── HandleConnector
+```
+
+### Component Responsibilities
+
+#### **CanvasNode** (Stateful Container)
+- **State Management**: Manages selection state with React hooks
+- **Event Handling**: Processes clicks and keyboard events
+- **Accessibility**: Implements ARIA attributes and keyboard navigation
+- **Composition**: Orchestrates all child components
+- **Props**: Receives name, subtitle, serviceName, status, serviceIcon
+
+#### **Node** (Pure Presentational)
+- **Display Only**: Renders the visual node element
+- **No State**: Completely controlled by parent props
+- **Visual Modifiers**: Applies CSS classes based on status and selection
+- **Status Icons**: Conditionally shows status indicators
+
+#### **Toolbar** (Interactive UI)
+- **Action Buttons**: Provides node operation controls
+- **Event Isolation**: Stops click propagation to prevent node selection
+- **Visibility**: Appears on hover/focus
+
+#### **HandleConnector** (Connection Point)
+- **Node Linking**: Provides UI for creating connections
+- **Event Isolation**: Independent click handling
+
+### Design Patterns
+
+1. **Container/Presentational Pattern**: CanvasNode (smart) wraps Node (dumb)
+2. **Composition over Inheritance**: Components composed from smaller pieces
+3. **Single Responsibility**: Each component has one clear purpose
+4. **Props Down, Events Up**: Unidirectional data flow
+5. **Design Tokens**: CSS custom properties for theming
+
+### State Management
+
+- **Local State**: Using React `useState` hook in CanvasNode
+- **Props**: Status and configuration passed down from App
+- **No Global State**: Simple enough for component-level state
+
+### Styling Architecture
+
+- **CSS Modules Pattern**: BEM-like naming (`.node`, `.node--selected`)
+- **Design Tokens**: Centralized in `/theme/tokens/`
+- **CSS Custom Properties**: Used for theming and consistency
 
 ## Accessibility Implementation
 
@@ -58,3 +147,46 @@ This implementation follows:
 - WCAG 2.1 Level AA guidelines for keyboard accessibility
 - WAI-ARIA 1.2 best practices for button widgets
 - WCAG 2.1 Success Criterion 2.3.3 (Animation from Interactions)
+
+## Development
+
+### Prerequisites
+- Node.js 18+ 
+- pnpm (package manager)
+
+### Getting Started
+
+```bash
+# Install dependencies
+pnpm install
+
+# Start development server
+pnpm dev
+
+# Build for production
+pnpm build
+
+# Preview production build
+pnpm preview
+
+# Run linter
+pnpm lint
+```
+
+### Code Quality
+
+This project maintains high code quality through:
+- **TypeScript**: Strict type checking enabled
+- **ESLint**: Configured with React and TypeScript rules
+- **Component Documentation**: JSDoc comments on all public interfaces
+- **Consistent Naming**: kebab-case for files, PascalCase for components
+- **Code Organization**: Clear separation of concerns and folder structure
+
+## Technology Stack
+
+- **React 19**: Latest React with new features
+- **TypeScript 5**: Strict mode enabled
+- **Vite**: Fast build tool with HMR
+- **Phosphor Icons**: Icon system
+- **CSS**: Modern CSS with custom properties
+- **pnpm**: Fast, disk-efficient package manager
