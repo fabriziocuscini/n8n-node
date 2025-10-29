@@ -43,10 +43,10 @@
   --color-white-alpha-95: rgb(255 255 255 / 0.95);
 
   /* Primitive colors */
-  --color-grey: #7a7a85;
-  --color-orange: #ff8534;
-  --color-red: #ff4034;
-  --color-green: #00e75a;
-  --color-cyan: #1ab6e5;
-  --color-blue: #0057ff;
+  --color-grey: rgb(122 122 133);
+  --color-orange: rgb(255 133 52);
+  --color-red: rgb(255 64 52);
+  --color-green: rgb(0 231 90);
+  --color-cyan: rgb(26 182 229);
+  --color-blue: rgb(0 87 255);
 }

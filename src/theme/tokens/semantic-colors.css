@@ -6,27 +6,29 @@
   --color-fg-tertiary: var(--color-white-alpha-35);
 
   /* Node status colors */
-  --outline-opacity-factor: 0.2;
+  --outline-opacity-factor: 35%;
+
   --color-status-default: var(--color-white);
   --color-status-pinned: var(--color-cyan);
   --color-status-success: var(--color-green);
-  --color-status-issue: var(--color-orange);
+  --color-status-issues: var(--color-orange);
   --color-status-deactivated: var(--color-grey);
-  --color-status-default-outline: var(--white-alpha-10);
+
+  --color-status-default-outline: var(--color-white-alpha-25);
   --color-status-pinned-outline: color-mix(
     in srgb,
-    var(--color-pinned) var(--outline-opacity-factor),
+    var(--color-status-pinned) var(--outline-opacity-factor),
     transparent
   );
   --color-status-success-outline: color-mix(
     in srgb,
-    var(--color-success) var(--outline-opacity-factor),
+    var(--color-status-success) var(--outline-opacity-factor),
     transparent
   );
-  --color-status-issue-outline: color-mix(
+  --color-status-issues-outline: color-mix(
     in srgb,
-    var(--color-issue) var(--outline-opacity-factor),
+    var(--color-status-issues) var(--outline-opacity-factor),
     transparent
   );
-  --color-status-deactivated-outline: var(--white-alpha-20);
+  --color-status-deactivated-outline: var(--color-white-alpha-30);
 }

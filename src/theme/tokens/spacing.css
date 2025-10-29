@@ -29,4 +29,6 @@
   --gap-md: var(--spacing-2);
   --gap-lg: var(--spacing-3);
   --gap-xl: var(--spacing-4);
+  --gap-2xl: var(--spacing-6);
+  --gap-3xl: var(--spacing-8);
 }
