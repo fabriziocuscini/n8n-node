@@ -6,7 +6,6 @@
 
   /* Node-specific tokens */
   --node-size: 100px;
-  --node-scaling-hover: 1;
   --node-selected-glow: var(--glow-lg);
   --node-radius: var(--radius-lg);
   --node-bg-gradient: linear-gradient(135deg, rgb(255 255 255 / 0.02) 0%, rgb(255 255 255 / 0) 100%),
@@ -52,7 +51,9 @@ button {
 .nodeStack {
   display: flex;
   flex-direction: row;
+  gap: var(--gap-4xl);
   justify-content: space-around;
+  flex-wrap: wrap;
   flex-basis: 80vw;
 }
 
@@ -61,6 +62,17 @@ button {
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &:hover,
+  &:focus-visible {
+    .handleConnector {
+      opacity: 1;
+    }
+
+    .toolbar {
+      opacity: 1;
+    }
+  }
 
   &__description {
     position: absolute;
@@ -120,17 +132,7 @@ button {
   /* Subtle transition while hovering */
   &:hover {
     cursor: pointer;
-    /* transform: scale(var(--node-scaling-hover)); */
-    transform: translateY(-1px) translateX(-1px);
-    box-shadow: var(--shadow-lg), var(--node-bg-inset-1), var(--node-bg-inset-2);
-
-    .handleConnector {
-      opacity: 1;
-    }
-
-    .toolbar {
-      opacity: 1;
-    }
+    box-shadow: var(--shadow-lg);
   }
 
   /* Focus state matches hover for keyboard navigation */

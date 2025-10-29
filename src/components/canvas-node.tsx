@@ -1,20 +1,23 @@
 import { useState } from 'react';
-import { N8nIcon, Node } from './';
-import type { NodeProps } from './node';
+import type { NodeStatus } from '../types/node-status';
+import { Node, Toolbar, HandleConnector, N8nIcon } from './';
 
-interface CanvasNodeProps extends NodeProps {
+interface CanvasNodeProps {
   name: string;
   subtitle?: string;
-  serviceName?: string;
+  serviceName: string;
+  status?: NodeStatus;
+  selected?: boolean;
+  serviceIcon?: React.ReactNode;
 }
 
 export const CanvasNode = ({
   name,
   subtitle,
+  serviceName,
   status = 'active',
   selected = false,
   serviceIcon = <N8nIcon />,
-  serviceName,
 }: CanvasNodeProps) => {
   const [isSelected, setIsSelected] = useState(selected);
 
@@ -35,19 +38,22 @@ export const CanvasNode = ({
   };
 
   return (
-    <div className="canvasNode">
-      <Node
-        status={status}
-        selected={isSelected}
-        serviceIcon={serviceIcon}
-        onClick={handleNodeClick}
-        onKeyDown={handleKeyDown}
-        ariaLabel={serviceName}
-      />
+    <div
+      className="canvasNode"
+      onClick={handleNodeClick}
+      onKeyDown={handleKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={serviceName}
+      aria-pressed={isSelected}
+    >
+      <Node status={status} selected={isSelected} serviceIcon={serviceIcon} />
       <div className="canvasNode__description">
         <div className="canvasNode__name">{name}</div>
         <div className="canvasNode__subtitle">{subtitle}</div>
       </div>
+      <Toolbar />
+      <HandleConnector />
     </div>
   );
 };
