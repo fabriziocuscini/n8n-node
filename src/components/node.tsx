@@ -6,11 +6,28 @@ export interface NodeProps {
   selected?: boolean;
   serviceIcon?: React.ReactNode;
   onClick?: () => void;
+  onKeyDown?: (event: React.KeyboardEvent<HTMLDivElement>) => void;
+  ariaLabel?: string;
 }
 
-export const Node = ({ status, selected, serviceIcon, onClick }: NodeProps) => {
+export const Node = ({
+  status,
+  selected,
+  serviceIcon,
+  onClick,
+  onKeyDown,
+  ariaLabel,
+}: NodeProps) => {
   return (
-    <div className={`node ${selected ? 'node--selected' : ''} node--${status}`} onClick={onClick}>
+    <div
+      className={`node ${selected ? 'node--selected' : ''} node--${status}`}
+      onClick={onClick}
+      onKeyDown={onKeyDown}
+      tabIndex={0}
+      role="button"
+      aria-label={ariaLabel}
+      aria-pressed={selected}
+    >
       <div className="node__serviceIcon">{serviceIcon}</div>
       <div className={`node__statusIcon node__statusIcon--${status}`} aria-label={status}>
         {status === 'pinned' && <PushPinIcon size={16} weight="fill" />}

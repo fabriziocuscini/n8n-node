@@ -112,6 +112,13 @@ body {
     box-shadow: var(--shadow-lg), var(--node-bg-inset-1), var(--node-bg-inset-2);
   }
 
+  /* Focus state matches hover for keyboard navigation */
+  &:focus-visible {
+    outline: none;
+    transform: scale(var(--node-scaling-hover));
+    box-shadow: var(--shadow-lg), var(--node-bg-inset-1), var(--node-bg-inset-2);
+  }
+
   &--selected {
     &:before {
       box-shadow: var(--node-selected-glow);
@@ -164,6 +171,18 @@ body {
 
     .node__serviceIcon {
       opacity: var(--opacity-disabled);
+    }
+  }
+}
+
+/* Respect user preference for reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .node {
+    transition: none;
+
+    &:hover,
+    &:focus-visible {
+      transform: none;
     }
   }
 }
