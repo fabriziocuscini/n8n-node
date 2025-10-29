@@ -1,0 +1,32 @@
+:root {
+  /* Spacing units in px */
+  --spacing-base-unit: calc(4px * var(--scaling));
+  --spacing-half: calc(var(--spacing-base-unit) * 0.5);
+  --spacing-1: calc(var(--spacing-base-unit) * 1);
+  --spacing-2: calc(var(--spacing-base-unit) * 2);
+  --spacing-3: calc(var(--spacing-base-unit) * 3);
+  --spacing-4: calc(var(--spacing-base-unit) * 4);
+  --spacing-5: calc(var(--spacing-base-unit) * 5);
+  --spacing-6: calc(var(--spacing-base-unit) * 6);
+  --spacing-7: calc(var(--spacing-base-unit) * 7);
+  --spacing-8: calc(var(--spacing-base-unit) * 8);
+  --spacing-9: calc(var(--spacing-base-unit) * 9);
+  --spacing-10: calc(var(--spacing-base-unit) * 10);
+  --spacing-11: calc(var(--spacing-base-unit) * 11);
+  --spacing-12: calc(var(--spacing-base-unit) * 12);
+  --spacing-13: calc(var(--spacing-base-unit) * 13);
+  --spacing-14: calc(var(--spacing-base-unit) * 14);
+  --spacing-15: calc(var(--spacing-base-unit) * 15);
+  --spacing-16: calc(var(--spacing-base-unit) * 16);
+  --spacing-17: calc(var(--spacing-base-unit) * 17);
+  --spacing-18: calc(var(--spacing-base-unit) * 18);
+  --spacing-19: calc(var(--spacing-base-unit) * 19);
+  --spacing-20: calc(var(--spacing-base-unit) * 20);
+
+  /* Gaps */
+  --gap-xs: var(--spacing-half);
+  --gap-sm: var(--spacing-1);
+  --gap-md: var(--spacing-2);
+  --gap-lg: var(--spacing-3);
+  --gap-xl: var(--spacing-4);
+}

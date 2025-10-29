@@ -1,0 +1,7 @@
+:root {
+  /* Highlight glows */
+  --glow-sm: 0 0 8px 2px var(--color-white-alpha-15);
+  --glow-md: 0 0 8px 4px var(--color-white-alpha-15);
+  --glow-lg: 0 0 12px 8px var(--color-white-alpha-15);
+  --glow-xl: 0 0 16px 12px var(--color-white-alpha-15);
+}

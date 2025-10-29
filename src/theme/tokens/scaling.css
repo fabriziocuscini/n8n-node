@@ -1,0 +1,9 @@
+:root {
+  /* Scaling factor for density and sizes */
+  --scaling-factor-xs: 0.9;
+  --scaling-factor-sm: 0.95;
+  --scaling-factor-md: 1;
+  --scaling-factor-lg: 1.05;
+  --scaling-factor-xl: 1.1;
+  --scaling: var(--scaling-factor-md);
+}

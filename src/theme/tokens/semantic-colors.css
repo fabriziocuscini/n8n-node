@@ -1,0 +1,32 @@
+:root {
+  /* Semantic colors */
+  --color-bg-canvas: #292724;
+  --color-fg-primary: var(--color-white);
+  --color-fg-secondary: var(--color-white-alpha-50);
+  --color-fg-tertiary: var(--color-white-alpha-35);
+
+  /* Node status colors */
+  --outline-opacity-factor: 0.2;
+  --color-status-default: var(--color-white);
+  --color-status-pinned: var(--color-cyan);
+  --color-status-success: var(--color-green);
+  --color-status-issue: var(--color-orange);
+  --color-status-deactivated: var(--color-grey);
+  --color-status-default-outline: var(--white-alpha-10);
+  --color-status-pinned-outline: color-mix(
+    in srgb,
+    var(--color-pinned) var(--outline-opacity-factor),
+    transparent
+  );
+  --color-status-success-outline: color-mix(
+    in srgb,
+    var(--color-success) var(--outline-opacity-factor),
+    transparent
+  );
+  --color-status-issue-outline: color-mix(
+    in srgb,
+    var(--color-issue) var(--outline-opacity-factor),
+    transparent
+  );
+  --color-status-deactivated-outline: var(--white-alpha-20);
+}

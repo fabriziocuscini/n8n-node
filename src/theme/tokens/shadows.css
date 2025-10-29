@@ -1,0 +1,7 @@
+:root {
+  /* Shadows */
+  --shadow-sm: 2px 2px 4px 0 var(--color-black-alpha-15);
+  --shadow-md: 4px 4px 8px 0 var(--color-black-alpha-15);
+  --shadow-lg: 8px 8px 16px 0 var(--color-black-alpha-20);
+  --shadow-xl: 12px 12px 24px 0 var(--color-black-alpha-30);
+}

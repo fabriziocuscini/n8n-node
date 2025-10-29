@@ -1,0 +1,18 @@
+@import './tokens/index.css';
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+}
+
+body {
+  background-color: var(--color-bg-canvas);
+  color: var(--color-fg-primary);
+}
