@@ -26,6 +26,9 @@ body,
 
 body {
   background-color: var(--color-bg-canvas);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.1)),
+    url('/image-mesh-gradient.png');
+  background-size: cover;
   color: var(--color-fg-primary);
   font-family: 'Inter Variable', 'Inter', sans-serif;
   font-size: 1rem;
