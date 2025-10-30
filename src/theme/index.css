@@ -118,7 +118,7 @@ button {
   background-color: var(--color-black-alpha-90);
   border: 1px solid var(--color-status-default-outline);
   box-shadow: var(--shadow-md), var(--node-bg-inset-1), var(--node-bg-inset-2);
-  transition: all 200ms ease-in-out;
+  transition: all var(--duration-moderate) ease-in-out;
 
   /* Pseudo-element to add glow effect when Node is selected */
   &:before {
@@ -213,8 +213,8 @@ button {
   height: var(--handleConnector-size);
   border-radius: var(--radius-full);
   background-color: var(--color-grey);
-  transition: background-color 200ms ease-in-out, opacity 500ms ease-in-out;
-  transition-delay: 100ms;
+  transition: background-color var(--duration-moderate) ease-in-out,
+    opacity var(--duration-slow) ease-in-out var(--duration-faster);
   z-index: 10;
   position: absolute;
   right: calc(var(--handleConnector-size) / -2);
@@ -249,8 +249,7 @@ button {
   border-radius: var(--radius-full);
   padding: var(--spacing-half);
   box-shadow: var(--shadow-md);
-  transition: opacity 200ms ease-in-out;
-  transition-delay: 100ms;
+  transition: opacity var(--duration-moderate) ease-in-out var(--duration-faster);
 
   &__button {
     display: flex;
@@ -262,7 +261,7 @@ button {
     border-radius: var(--radius-full);
     background-color: var(--color-transparent);
     color: var(--color-white);
-    transition: background-color 100ms ease-in-out;
+    transition: background-color var(--duration-faster) ease-in-out;
 
     &:hover,
     &:focus-visible {
